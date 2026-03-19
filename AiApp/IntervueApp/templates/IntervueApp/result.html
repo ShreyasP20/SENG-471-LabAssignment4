@@ -1,0 +1,33 @@
+<!Doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIvyInterview</title>
+    <link rel="stylesheet" href="{% static "styles/result.css" %}">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">AIvyInterview</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+    </header>
+    <section class="home" id="'home">
+        <div class="home-text">
+            <span>Congratulations!!</span>
+            <p> You Have Scored: <br><strong>{{ final_score }}</strong></p>
+        </div>
+    </section> 
+
+    <script src="{% static 'javascripts/index.js' %}"></script>
+
+
+</body>
+
+</html>

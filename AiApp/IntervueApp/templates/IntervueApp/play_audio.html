@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIvyInterview</title>
+    <link rel="stylesheet" href="{% static "styles/play_audio.css" %}">
+</head>
+<body>
+    <header>
+        <h2 class="logo">AIvyInterview</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="'home">
+        <div class="home-text">
+            <h1>Listen Carefully</h1>
+            <p>The App will switch to the answer section after 10 seconds.</p>
+            <audio controls src="/media/audio/question.mp3" id="question-audio"></audio>
+            <br>
+            <br>
+            <button class="btn" onclick="window.location.href='/process_text/'">Give Your Answer!</button>
+        </div>
+    </section> 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audio = document.getElementById("question-audio");
+
+            function switchToAnswerSection() {
+                console.log("Switching to the answer section...");
+                window.location.href = "/process_text/";
+            }
+
+            audio.addEventListener("ended", function() {
+                setTimeout(switchToAnswerSection, 10000); 
+            });
+        });
+    </script>
+</body>
+</html>
